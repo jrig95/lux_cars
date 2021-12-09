@@ -67,3 +67,4 @@ gem 'tailwindcss-rails'
 gem 'simple_form-tailwind'
 
 gem 'devise'
+gem 'pundit'
