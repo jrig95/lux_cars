@@ -5,5 +5,4 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :rentals
   has_many :cars
-  has_many :rentals_as_owner, through: :cars, source: :rentals
 end
