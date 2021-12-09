@@ -12,7 +12,7 @@ class PagesController < ApplicationController
   end
 
   def update
-  rental_id = params[:rental_request_id]
+  rental_id = params[:request_id]
   @rental = Rental.find(rental_id)
   @rental.update_attribute(:status, true)
   end

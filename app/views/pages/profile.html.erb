@@ -2,7 +2,7 @@
 <% @user.cars.each do |car| %>
 <% car.rentals.each do |request| %>
 <%= request.user.email %>
-<%= link_to 'Confirm', update_path, params: {rental_request_id: request.id}, method: :put
+<%= link_to 'Confirm', update_path(params: {request_id: request.id}), method: :put
  %>
 <% end %>
 <% end %>
