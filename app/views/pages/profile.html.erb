@@ -1,0 +1,12 @@
+<h1>Rental Requests</h1>
+<% @user.cars.each do |car| %>
+<% car.rentals.each do |request| %>
+<%= request.user.email %>
+<% end %>
+<%= link_to 'Confirm', update_rental_status_rental_path(car), method: :patch %>
+<% end %>
+
+<h1>My rentals</h1>
+<% @user.rentals.each do |rental| %>
+<%= rental.car.name %>
+<% end %>

@@ -4,7 +4,12 @@ Rails.application.routes.draw do
 
   get 'about', to: 'pages#about'
   resources :cars do
-    resources :rentals, only: [:new, :create]
+    resources :rentals, only: [:new, :create, :update] do
+    patch :update_rental_status
+    end
+
   end
+
+  get 'profile', to: 'pages#profile'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
