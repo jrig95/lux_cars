@@ -1,1 +1,5 @@
 <h1>Cars index</h1>
+
+  <ul class="navbar-nav mr-auto"><% @cars.each do |car| %>
+    <li class="nav-item active"><%= link_to car.name, car_path(car) %></li>
+  <% end %>
