@@ -23,7 +23,7 @@ class CarsController < ApplicationController
     @car.user = current_user
     authorize @car
 
-    if @car.save
+    if @car.save!
       redirect_to @car, notice: "Car was successfully created."
     else
       render :new
@@ -32,12 +32,11 @@ class CarsController < ApplicationController
 
   def destroy
     @car = Car.find(params[:id])
-    @Car.destroy!
+    @car.destroy!
     respond_to do |format|
-      format.html { redirect_to lists_path, notice: "List was successfully destroyed." }
+      format.html { redirect_to cars_path, notice: "List was successfully destroyed." }
       format.json { head :no_content }
     end
-    redirect_to car_path
   end
 
   private

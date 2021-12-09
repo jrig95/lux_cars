@@ -19,7 +19,6 @@
   <strong>User:</strong>
   <%= @car.user_id %>
 </p>
-
-
 <%= link_to 'Edit', edit_car_path(@car) %> |
+<%= link_to 'Destroy', @car, method: :delete, data: { confirm: 'Are you sure?' } %>
 <%= link_to 'Back', cars_path %>
