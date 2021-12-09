@@ -2,8 +2,9 @@
 <% @user.cars.each do |car| %>
 <% car.rentals.each do |request| %>
 <%= request.user.email %>
+<%= link_to 'Confirm', update_path, params: {rental_request_id: request.id}, method: :put
+ %>
 <% end %>
-<%= link_to 'Confirm', update_rental_status_rental_path(car), method: :patch %>
 <% end %>
 
 <h1>My rentals</h1>

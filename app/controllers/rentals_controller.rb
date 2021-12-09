@@ -20,11 +20,6 @@ class RentalsController < ApplicationController
     redirect_to cars_path
   end
 
-  def update_rental_status
-  @rental = Rental.find(params[:id])
-  @rental.update_attribute(:status, true)
-  end
-
   private
   def set_list
     @car = Car.find(params[:car_id])

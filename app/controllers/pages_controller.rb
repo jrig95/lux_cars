@@ -10,4 +10,10 @@ class PagesController < ApplicationController
   def profile
     @user = current_user
   end
+
+  def update
+  rental_id = params[:rental_request_id]
+  @rental = Rental.find(rental_id)
+  @rental.update_attribute(:status, true)
+  end
 end
