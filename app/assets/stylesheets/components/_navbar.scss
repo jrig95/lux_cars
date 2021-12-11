@@ -1,15 +1,15 @@
-.navbar-lewagon {
+.navbar-lux_cars {
   justify-content: space-between;
   background: black
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-lux_cars .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
+// .navbar-lewagon .navbar-brand img {
+//   width: 40px;
+// }
 
 .btn-standard {
   color:white;
@@ -20,5 +20,26 @@
   font-weight: lighter;
   opacity: 0.6;
   transition: opacity 0.3s ease;
+
+}
+
+.logo {
+ background: black;
+ height: 55px;
+ width: 131px;
+ left: 10px;
+ top: 13px;
+ border-radius: 0px;
+}
+
+ .navbar-lux_cars .h1 {
+ color: #FF4D00;
+ font-family: Chivo;
+ font-size: 60px;
+ font-style: normal;
+ font-weight: 400;
+ line-height: 71px;
+ letter-spacing: 0em;
+ text-align: left;
 
 }
