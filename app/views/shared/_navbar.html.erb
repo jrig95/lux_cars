@@ -19,6 +19,34 @@
       <li class="nav-item active">
         <%= link_to "Become a renter", about_path, class: "btn btn-standard" %>
       </li>
+
+      <% if user_signed_in? %>
+        <li class="nav-item active">
+          <%= link_to "Home",root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "About", about_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Cars", cars_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Become a Host!", new_car_path, class: "nav-link" %>
+        </li>
+
+        <li class="nav-item dropdown">
+          <%= image_tag "http://annonceauto.tn/storage/2021/04/ferrarihd.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "Action", "#", class: "dropdown-item" %>
+            <%= link_to "Another action", "#", class: "dropdown-item" %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          </div>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        </li>
+      <% end %>
     </ul>
   </div>
 </div>
