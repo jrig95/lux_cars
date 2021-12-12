@@ -264,7 +264,6 @@ DEPENDENCIES
   rails (~> 6.0.4, >= 6.0.4.1)
   sass-rails (>= 6)
   selenium-webdriver
-  simple_form
   simple_form-tailwind
   spring
   spring-watcher-listen (~> 2.0.0)
@@ -279,4 +278,4 @@ RUBY VERSION
    ruby 2.7.3p183
 
 BUNDLED WITH
-   2.2.33
+   2.2.26
