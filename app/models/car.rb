@@ -7,4 +7,10 @@ class Car < ApplicationRecord
   validates :model, presence: true
   # validates :image, presence: true
   validates :location, presence: true
+
+  def unavailable?
+    rentals.any? do |rental|
+      rental.status
+    end
+  end
 end
