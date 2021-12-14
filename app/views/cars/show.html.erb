@@ -2,6 +2,13 @@
 
 <%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
 
+  <div id="map"
+     style="width: 100px; height: 100px;"
+     data-marker="<%= @marker.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+     something
+     </div>
+
 <p>
   <strong>Name:</strong>
   <%= @car.name %>

@@ -73,3 +73,5 @@ gem 'pundit'
 gem 'dotenv-rails', groups: [:development, :test]
 # to upload images
 gem 'cloudinary', '~> 1.16.0'
+# geocoder
+gem 'geocoder'

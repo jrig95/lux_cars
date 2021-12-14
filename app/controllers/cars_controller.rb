@@ -9,6 +9,11 @@ class CarsController < ApplicationController
   def show
     # @car = Car.find(params[:id])
     @rental = Rental.new
+    @marker =
+      {
+        lat: @car.latitude,
+        lng: @car.longitude
+      }
   end
 
   def new
