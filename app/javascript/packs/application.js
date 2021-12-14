@@ -23,7 +23,7 @@ require("channels")
 // ----------------------------------------------------
 
 // External imports
-import "bootstrap";
+import "tailwind";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
