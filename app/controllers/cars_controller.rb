@@ -9,6 +9,11 @@ class CarsController < ApplicationController
   def show
     # @car = Car.find(params[:id])
     @rental = Rental.new
+    @marker =
+      {
+        lat: @car.latitude,
+        lng: @car.longitude
+      }
   end
 
   def new
@@ -48,6 +53,6 @@ class CarsController < ApplicationController
   end
 
   def car_params
-    params.require(:car).permit(:name, :description, :year, :model, :location)
+    params.require(:car).permit(:name, :description, :year, :model, :location, :photo)
   end
 end
