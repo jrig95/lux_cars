@@ -66,5 +66,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'tailwindcss-rails'
 gem 'simple_form-tailwind'
 
+# for sign ins and users
 gem 'devise'
+# for authoirzation
 gem 'pundit'
+# for image upload
+gem 'dotenv-rails', groups: [:development, :test]
