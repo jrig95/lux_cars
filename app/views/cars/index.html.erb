@@ -1,6 +1,19 @@
 <h1>Cars index</h1>
 
-
-  <ul class="navbar-nav mr-auto"><% @cars.each do |car| %>
-    <li class="nav-item active"><%= link_to car.name, car_path(car) %></li>
-  <% end %>
+<% @cars.each do |car| %>
+<div class="max-w-sm rounded overflow-hidden shadow-lg">
+<div class="car_name">
+<%= car.name %>
+</div>
+  <%# <img class="w-full" src="/img/card-top.jpg" alt="Sunset in the mountains"> %>
+  <div class="px-6 py-4">
+    <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
+    <p class="text-gray-700 text-base">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+    </p>
+  </div>
+  <div class="px-6 pt-4 pb-2">
+  <%= link_to "View car", car_path(car) %>
+  </div>
+</div>
+<% end %>

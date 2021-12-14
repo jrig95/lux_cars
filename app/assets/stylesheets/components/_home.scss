@@ -1,0 +1,29 @@
+.home {
+  height: 100vh;
+  width: 100vw;
+  background-image:  linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image-url("landing.jpg");
+  background-size: cover;
+}
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 5px;
+  background: #FF4D00;
+  transition: background 0.3s ease;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  height: 100px;
+  width: 400px;
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn-flat:hover {
+  background: grey;
+  color: white;
+}
