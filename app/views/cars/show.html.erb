@@ -1,5 +1,7 @@
 <h1>Show Car page</h1>
 
+<%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill %>
+
 <p>
   <strong>Name:</strong>
   <%= @car.name %>
@@ -14,6 +16,7 @@
   <strong>Year:</strong>
   <%= @car.year %>
 </p>
+
 
 <p>
   <strong>User:</strong>
