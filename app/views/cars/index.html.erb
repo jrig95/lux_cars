@@ -5,15 +5,11 @@
 <div class="car_name">
 <%= car.name %>
 </div>
-  <%# <img class="w-full" src="/img/card-top.jpg" alt="Sunset in the mountains"> %>
-  <div class="px-6 py-4">
-    <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
-    <p class="text-gray-700 text-base">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-    </p>
-  </div>
+<%= cl_image_tag car&.photo&.key || "", height: 300, width: 400, crop: :fill %>
   <div class="px-6 pt-4 pb-2">
   <%= link_to "View car", car_path(car) %>
   </div>
 </div>
 <% end %>
+
+<%# if car.photo.attached? %>
