@@ -1,9 +1,19 @@
+<h1>User: <%= @user.email %></h1>
 <h1>Rental Requests</h1>
 <% @user.cars.each do |car| %>
 <% car.rentals.each do |request| %>
+<% car.rentals.each do |rental| %>
+
+<% unless car.unavailable? %>
 <%= request.user.email %>
 <%= link_to 'Confirm', update_path(params: {request_id: request.id}), method: :put
  %>
+ <% else %>
+  <p><%=rental.user.email%></p>
+
+  <p> rental request has been approved</p>
+ <% end %>
+<% end %>
 <% end %>
 <% end %>
 
