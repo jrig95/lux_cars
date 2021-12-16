@@ -8,6 +8,6 @@
 <% end %>
 
 <h1>My rentals</h1>
-<% @user.rentals.each do |rental| %>
+<% @user.rentals.where(status: true).each do |rental| %>
 <%= rental.car.name %>
 <% end %>

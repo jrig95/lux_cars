@@ -2,14 +2,11 @@
 
 <%= simple_form_for(@car) do |f| %>
   <%=f.input :name %>
-  <%= f.submit %>
   <%=f.input :description %>
-  <%= f.submit %>
   <%=f.input :year %>
-  <%= f.submit %>
   <%=f.input :model %>
-  <%= f.submit %>
-    <%=f.input :location %>
+  <%=f.input :location %>
+  <%= f.input :photo, as: :file %>
   <%= f.submit %>
 
 <% end %>
