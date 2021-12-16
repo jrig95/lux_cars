@@ -1,7 +1,11 @@
 <%= simple_form_for [ @car, @rental ] do |b| %>
   <%# <%= b.string :status %>
+<<<<<<< HEAD
+  <%= b.association :user %>
+=======
   <%= b.association :user, :as => :hidden, label_method: :email, :input_html => { :value => current_user.id }  %>
 
+>>>>>>> master
   <%# <% rental. %>
   <%= b.submit "Request to rental",  class: "btn btn-primary" %>
 <% end %>
