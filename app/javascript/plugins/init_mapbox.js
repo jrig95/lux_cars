@@ -10,7 +10,7 @@ const initMapbox = () => {
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v11',
       center: [marker.lng, marker.lat],
-      zoom: 12,
+      zoom: 11,
 
 
     });
@@ -18,9 +18,6 @@ const initMapbox = () => {
       .setLngLat([marker.lng, marker.lat])
       .addTo(map);
   }
-
-
-
 }
 
 

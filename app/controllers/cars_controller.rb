@@ -2,8 +2,12 @@ class CarsController < ApplicationController
   before_action :set_car, only: [:show, :edit, :update, :destroy]
 
   def index
-    # @cars = Car.all
-    @cars = policy_scope(Car).order(created_at: :desc)
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR location ILIKE :query"
+      @cars = Car.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @cars = policy_scope(Car).order(created_at: :desc)
+    end
   end
 
   def show
