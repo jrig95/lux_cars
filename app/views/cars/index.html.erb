@@ -1,5 +1,15 @@
 <h1>Cars index</h1>
 
-  <ul class="navbar-nav mr-auto"><% @cars.each do |car| %>
-    <li class="nav-item active"><%= link_to car.name, car_path(car) %></li>
-  <% end %>
+<% @cars.each do |car| %>
+<div class="max-w-sm rounded overflow-hidden shadow-lg">
+<div class="car_name">
+<%= car.name %>
+</div>
+<%= cl_image_tag car&.photo&.key || "", height: 300, width: 400, crop: :fill %>
+  <div class="px-6 pt-4 pb-2">
+  <%= link_to "View car", car_path(car) %>
+  </div>
+</div>
+<% end %>
+
+<%# if car.photo.attached? %>
