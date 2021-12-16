@@ -1,1 +1,24 @@
 // Specific CSS for your home-page
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
+
+// car index page
+.card-container{
+  box-shadow: 6px 6px 4px #ff4d00;
+  min-width: 420px;
+  max-height: 210px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #F7F7F7;
+}
+
+.card-container img{
+  width: 210px;
+  height: 115px;
+}
+
+.card-container h1{
+  font-family: Merriweather;
+  font-weight: 700;
+  font-size: 25px;
+}
