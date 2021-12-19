@@ -14,9 +14,10 @@
   </head>
   <body>
     <%= render 'shared/navbar'  %>
-    <main class="flex">
+    <main class="container mx-auto mt-28 flex">
     <p class="alert"><%= alert %></p>
     <%= yield %>
+
     </main>
 
     <%= render 'shared/footer'  %>
