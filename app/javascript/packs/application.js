@@ -29,7 +29,8 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 
 import { initMapbox } from '../plugins/init_mapbox';
-
+import { dropDown } from './dropdown';
 document.addEventListener('turbolinks:load', () => {
+  dropDown();
   initMapbox();
 })
