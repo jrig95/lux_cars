@@ -1,8 +1,8 @@
 <h1>User: <%= @user.email %></h1>
 <h1>Rental Requests</h1>
 <% @user.cars.each do |car| %>
-<% car.rentals.each do |request| %>
-<% car.rentals.each do |rental| %>
+  <% car.rentals.each do |request| %>
+    <% car.rentals.each do |rental| %>
 
 <% unless car.unavailable? %>
 <%= request.user.email %>
