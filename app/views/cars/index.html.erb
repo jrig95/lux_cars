@@ -1,16 +1,14 @@
-
-<div class="max-w-sm rounded">
-<% @cars.each do |car| %>
-<div class="card-container">
-<div>
-<h2 class="car_name"><%= car.name %> <%= car.model %></h2>
+<div class="car_container grid grid-cols-3 items-center gap-5">
+  <% @cars.each do |car| %>
+    <div class="car-card">
+      <div>
+        <h2 class="car_name"><%= car.name %> <%= car.model %></h2>
+      </div>
+      <%= cl_image_tag car&.photo&.key || "", height: 300, width: 400, crop: :fill %>
+      <div class="px-6 pt-2 pb-2 mb-2 border-div">
+        <%= link_to "View car", car_path(car),  class: "view_car" %>
+      </div>
+    </div>
+  <% end %>
 </div>
-<%= cl_image_tag car&.photo&.key || "", height: 300, width: 400, crop: :fill %>
-  <div class="px-6 pt-4 pb-2">
-  <%= link_to "View car", car_path(car),  class: "view_car" %>
-  </div>
-<% end %>
-</div>
-</div>
-
 <%# if car.photo.attached? %>
