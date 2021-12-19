@@ -3,7 +3,7 @@
    <div class= "flex flex-row">
       <div class="basis-3/4">
          <div class="w-full">
-            <h1 class="text-gray-900 text-5xl font-medium mb-2 text-center"><%= @car.name%></h1>
+            <h1 class="text-gray-900 text-5xl font-medium mb-2 text-center"><%= @car.name%> <%= @car.model %></h1>
          </div>
          <div>
             <%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill, class: "object-cover h-80 w-full card-image" %>
