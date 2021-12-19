@@ -1,3 +1,4 @@
+
 <div class = "container mx-auto">
    <div class= "flex flex-row">
       <div class="basis-3/4">
@@ -22,13 +23,17 @@
                   <li class="multi-select-list px-6 py-2 border-b border-yellow-500 w-full rounded-t-lg  text-white">
                      Choose an action
                   </li>
-                  <li class="px-6 py-2 border-b border-gray-200 w-full"><%= link_to 'Car unavailable', cars_path, class: "px-6 py-2 border-b border-gray-200 w-full underline hover:underline-offset-4 " %>
-                     <% unless @car.unavailable? %>
-                     <%= simple_form_for [ @car, @rental ] do |b| %>
-                     <%= b.association :user, :as => :hidden, label_method: :email, :input_html => { :value => current_user.id }  %>
-                     <%= b.submit "Rent This Car",  class: "px-6 py-2 border-b border-gray-200 w-full underline hover:underline-offset-4 " %>
-                     <% end %>
-                     <% end %>
+                  <li class="px-6 py-2 border-b border-gray-200 w-full">
+                     <% if @car.unavailable? %>
+                    <%= link_to 'Car unavailable', cars_path, class: "px-6 py-2 border-b border-gray-200 w-full underline hover:underline-offset-4 "  %>
+                    <% else %>
+                      <%= simple_form_for [ @car, @rental ] do |b| %>
+                        <%# <%= b.string :status %>
+                        <%= b.association :user, :as => :hidden, label_method: :email, :input_html => { :value => current_user.id }  %>
+                        <%# <% rental. %>
+                        <%= b.submit "Rent This Car",  class: "btn btn-primary" %>
+                      <% end %>
+                  <% end %>
                   </li>
                    <li class="px-6 py-2 border-b border-gray-200 w-full underline hover:underline-offset-4"><%= link_to 'Edit', edit_car_path(@car) %></li>
                   <li class="px-6 py-2 border-b border-gray-200 w-full underline hover:underline-offset-4"> <%= link_to 'Destroy', @car, method: :delete, data: { confirm: 'Are you sure?' } %></li>
@@ -50,4 +55,3 @@
          </div>
       </div>
    </div>
-</div>
