@@ -1,8 +1,9 @@
 .home {
-  height: 100vh;
-  width: 100vw;
-  background-image:  linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image-url("landing.jpg");
+  height: 100%;
+  width: 100%;
+  background-image:  linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(asset_path("landing.jpg"));
   background-size: cover;
+  background-color: black;
   padding: 300px;
 }
 
