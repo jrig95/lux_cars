@@ -3,7 +3,7 @@
    <div class= "flex flex-row">
       <div class="basis-3/4">
          <div class="w-full">
-            <h1 class="text-gray-900 text-5xl font-medium mb-2 text-center"><%= @car.name%></h1>
+            <h1 class="text-gray-900 text-5xl font-medium mb-2 text-center"><%= @car.name%> <%= @car.model%></h1>
          </div>
          <div>
             <%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill, class: "object-cover h-80 w-full card-image" %>
@@ -18,31 +18,25 @@
             <p class="text-gray-900 text-xl font-medium mb-2"> <strong>Description: </strong><%= @car.description%></p>
             <br>
             <%# multi-select list of actions %>
-            <div class="flex justify-left">
-               <ul class="bg-white rounded-lg border border-yellow-500 w-96 text-gray-900">
-                  <li class="multi-select-list px-6 py-2 border-b border-yellow-500 w-full rounded-t-lg  text-white">
-                     Choose an action
-                  </li>
-                  <li class="px-6 py-2 border-b border-gray-200 w-full">
+
+                <button type="button" class="Rent-btn">
                      <% if @car.unavailable? %>
-                    <%= link_to 'Car unavailable', cars_path, class: "px-6 py-2 border-b border-gray-200 w-full underline hover:underline-offset-4 "  %>
+                    <%= link_to 'Car unavailable', cars_path, class: "Rent-btn" %>
                     <% else %>
                       <%= simple_form_for [ @car, @rental ] do |b| %>
                         <%# <%= b.string :status %>
                         <%= b.association :user, :as => :hidden, label_method: :email, :input_html => { :value => current_user.id }  %>
                         <%# <% rental. %>
-                        <%= b.submit "Rent This Car",  class: "btn btn-primary" %>
+                        <%= b.submit "Rent This Car", class:"Rent-btn" %>
                       <% end %>
                   <% end %>
-                  </li>
-                   <li class="px-6 py-2 border-b border-gray-200 w-full underline hover:underline-offset-4"><%= link_to 'Edit', edit_car_path(@car) %></li>
-                  <li class="px-6 py-2 border-b border-gray-200 w-full underline hover:underline-offset-4"> <%= link_to 'Destroy', @car, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-               </ul>
-            </div>
+                </button>
+
+            <br>
             <br>
             <div>
-            <p class="text-gray-900"><%= link_to 'Back', cars_path %></p>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><%= link_to 'Back', cars_path %>
+            <p class="back-text"><%= link_to 'Back', cars_path %></p>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" >
             </svg>
             </div>
