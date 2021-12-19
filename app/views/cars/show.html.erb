@@ -36,15 +36,15 @@
 <%= link_to 'Edit', edit_car_path(@car) %> |
 <%= link_to 'Destroy', @car, method: :delete, data: { confirm: 'Are you sure?' } %>
 <%= link_to 'Back', cars_path %>
-<%= link_to 'Car unavailable', cars_path, class: "btn btn-primary"  %>
-<% unless @car.unavailable? %>
-  <%= simple_form_for [ @car, @rental ] do |b| %>
-    <%# <%= b.string :status %>
-    <%= b.association :user, :as => :hidden, label_method: :email, :input_html => { :value => current_user.id }  %>
-
-    <%# <% rental. %>
-    <%= b.submit "Rent This Car",  class: "btn btn-primary" %>
-  <% end %>
+<% if @car.unavailable? %>
+  <%= link_to 'Car unavailable', cars_path, class: "btn btn-primary"  %>
+  <% else %>
+    <%= simple_form_for [ @car, @rental ] do |b| %>
+      <%# <%= b.string :status %>
+      <%= b.association :user, :as => :hidden, label_method: :email, :input_html => { :value => current_user.id }  %>
+      <%# <% rental. %>
+      <%= b.submit "Rent This Car",  class: "btn btn-primary" %>
+    <% end %>
 <% end %>
 
 </div>
