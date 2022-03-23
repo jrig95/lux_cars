@@ -45,6 +45,11 @@
 
 // footer css
 //show page
+.w-full h1{
+  font-family: Merriweather;
+  font-weight: 700;
+  font-size: 36px;
+}
 
 #map {
   height: 90vh;
@@ -52,34 +57,116 @@
   position: sticky;
   top: 0;
 }
-
-.multi-select-list {
-  background-color: #EA6C36;
+// .text-wrapper{
+//   padding-top: 40px;
+//   min-width: 500px;
+//   min-height: 400px;
+//   background-color: whitesmoke;
+//   box-shadow: 6px 6px 4px #EA6C36;
+// }
+.para-text {
+  font-family: Merriweather;
+  font-weight: 400;
+  font-size: 18px;
+  color: black;
 }
+
 
 .back-text a{
 text-decoration: none;
-font-family:'Chivo', sans-serif;
-font-size: 18px;
-font-weight: bold;
+font-family:Merriweather;
+font-size: 16px;
+font-weight: normal;
 color: black;
+position: absolute;
+display: inline;
+
 
 }
 
+.back-text a:hover{
+  color: #EA6C36;
+
+
+}
 .list a{
   text-decoration: none;
   color: black;
 }
 
-.Rent-btn {
+.Rent-btn{
+  box-shadow: 6px 6px 4px #EA6C36;
+  border: 3px solid #FF4D00;
+  width: 250px;
+  text-align: center;
   text-decoration: none;
-  color:white;
-  font-weight: bolder;
-  background: #EA6C36;
-  position: relative;
+  color: black;
+  font-family: Merriweather;
   padding: 8px 24px;
-  border-radius: 50px;
-  margin-right: 1rem;
-  font-weight: normal;
+  height: 50px;
+   margin-left: 120px;
+   color: #FF4D00;
+}
 
+.Rent-btn:hover{
+  background-color: #FF4D00;
+  color: #F7F7F7;
+}
+//new car
+.car-wrapper{
+  padding-left: 250px;
+  padding-top: 0;
+}
+.new-car-card{
+  background-color:whitesmoke;
+  border: 4px solid #FF4D00;
+   box-shadow: 6px 6px 6px 4px #EA6C36;
+  align-items: center;
+  justify-content: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 90vh;
+  min-height: 85vh;
+  padding-left: 10px;
+
+}
+
+.new-car-card h1{
+font-size: 36px;
+font-weight:bold;
+padding-bottom: 25px;
+padding-top: 25px;
+color:black;
+margin-left: 170px;
+margin-right: auto;
+font-family: Merriweather;
+
+}
+.form-inputs{
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+}
+.photo-label{
+ text-align: left;
+ padding-bottom:0;
+}
+.create-button {
+  box-shadow: 6px 6px 4px #EA6C36;
+  border: 3px solid #FF4D00;
+  width: 100px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Merriweather;
+}
+.create-button:hover{
+  background-color: #FF4D00;
+  color: #F7F7F7;
 }

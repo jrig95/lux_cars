@@ -1,14 +1,23 @@
-<h1>New Car</h1>
+<div class="car-wrapper">
 
-<%= simple_form_for(@car) do |f| %>
+ <div class="new-car-card">
+
+
+<h1>Post a Car</h1>
+
+  <%= simple_form_for(@car) do |f| %>
+  <div class="form-inputs">
   <%=f.input :name %>
   <%=f.input :description %>
   <%=f.input :year %>
   <%=f.input :model %>
   <%=f.input :location %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
+  <div class="photo-label"><%= f.input :photo, as: :file %></div>
 
-<% end %>
+  <%= f.submit class:"create-button" %>
 
+  <% end %>
+    </div>
 <%= link_to 'Back', cars_path %>
+</div>
+</div>

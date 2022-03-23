@@ -21,6 +21,8 @@
   font-weight: normal;
   opacity: 0.6;
   transition: opacity 0.3s ease;
+  min-height: 30px;
+  min-width: 50px;
 
 }
 
@@ -46,6 +48,7 @@
  line-height: 60px;
  letter-spacing: 0em;
  text-align: left;
+ text-decoration: none !important;
 }
 
 .dropdown {
@@ -56,6 +59,7 @@
 #dropdown_links{
   display: none;
 }
+
 
 .show{
   display: block !important;

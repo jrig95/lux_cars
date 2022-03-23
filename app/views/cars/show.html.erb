@@ -3,42 +3,44 @@
    <div class= "flex flex-row">
       <div class="basis-3/4">
          <div class="w-full">
-            <h1 class="text-gray-900 text-5xl font-medium mb-2 text-center"><%= @car.name%> <%= @car.model%></h1>
+            <h1 class="mb-2 text-center pb-12"><%= @car.name%> <%= @car.model%></h1>
          </div>
          <div>
             <%= cl_image_tag @car.photo.key, height: 300, width: 400, crop: :fill, class: "object-cover h-80 w-full card-image" %>
          </div>
          <div class="p-6 flex flex-col justify-start">
-            <p class="text-gray-900 text-xl font-medium mb-2"> Welcome! <strong>User:</strong>
-               <%= @car.user_id %> We hope you decide to take your next journey in this luxurious <%= @car.name%>!
+           <div class="text-wrapper">
+            <p class="para-text mb-2">  <strong>Welcome!</strong>
+              We hope you decide to take your next journey in this luxurious <%= @car.name%>!
             </p>
             <br>
-            <p class="text-gray-900 text-xl font-medium mb-2"> <strong>Year: </strong><%= @car.year%></p>
+            <p class="para-text mb-2"> <strong>Year: </strong><%= @car.year%></p>
             <div></div>
-            <p class="text-gray-900 text-xl font-medium mb-2"> <strong>Description: </strong><%= @car.description%></p>
+            <p class="para-text mb-2 pb-12"> <strong>Description: </strong><%= @car.description%></p>
             <br>
-            <%# multi-select list of actions %>
 
-                <button type="button" class="Rent-btn">
+                <button type="button" >
                      <% if @car.unavailable? %>
                     <%= link_to 'Car unavailable', cars_path, class: "Rent-btn" %>
                     <% else %>
                       <%= simple_form_for [ @car, @rental ] do |b| %>
-                        <%# <%= b.string :status %>
                         <%= b.association :user, :as => :hidden, label_method: :email, :input_html => { :value => current_user.id }  %>
-                        <%# <% rental. %>
                         <%= b.submit "Rent This Car", class:"Rent-btn" %>
                       <% end %>
                   <% end %>
                 </button>
+               </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
 
-            <br>
-            <br>
-            <div>
-            <p class="back-text"><%= link_to 'Back', cars_path %></p>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" >
-            </svg>
+            <div class="back-text">
+            <%# <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512" width="30" height="30" ><path d="M360 224L272 224v-56c0-9.531-5.656-18.16-14.38-22C248.9 142.2 238.7 143.9 231.7 150.4l-96 88.75C130.8 243.7 128 250.1 128 256.8c.3125 7.781 2.875 13.25 7.844 17.75l96 87.25c7.031 6.406 17.19 8.031 25.88 4.188s14.28-12.44 14.28-21.94l-.002-56L360 288C373.3 288 384 277.3 384 264v-16C384 234.8 373.3 224 360 224zM256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 464c-114.7 0-208-93.31-208-208S141.3 48 256 48s208 93.31 208 208S370.7 464 256 464z" /></svg> %>
+             <span><%= link_to 'Back', cars_path %></span>
             </div>
          </div>
       </div class= "text-inline">
@@ -48,4 +50,5 @@
             data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
          </div>
       </div>
+
    </div>
