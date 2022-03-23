@@ -19,8 +19,8 @@
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  height: 100px;
-  width: 400px;
+  min-height: 80px;
+  width: 500px;
   font-size: 25px;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -28,4 +28,15 @@
 .btn-flat:hover {
   background: grey;
   color: white;
+}
+
+.search-btn{
+ min-width: 90px;
+  background: #FF4D00;
+  color: white;
+  border-radius:0 10px 10px 0;
+}
+
+.search-btn:hover {
+  opacity: 0.5;
 }
